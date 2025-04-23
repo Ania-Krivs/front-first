@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Туристические предложения</title>
+    <link rel="stylesheet" href="card.css">
+</head>
+<body>
+    
+    <h1>Специальные предложения</h1>
+    <div class="card-container">
+        <div class="card">
+            <!-- заполнить ссылку -->
+            <img src="./img/calendar.svg" alt="">
+            <div class="card-content">
+                <h3>Card1</h3>
+                <p>testtetstest</p>
+                <a href="" class="btn1">Read more</a>
+                <h4>Подробнее</h4>
+            </div>
+        </div>
+
+        <div class="card">
+            <!-- заполнить ссылку -->
+            <img src="./img/calendar.svg" alt="">
+            <div class="card-content">
+                <h3>Card2</h3>
+                <p>testtetstest</p>
+                <a href="" class="btn2">Read more</a>
+                <h4>Подробнее</h4>
+            </div>
+        </div>
+
+        <div class="card">
+            <!-- заполнить ссылку -->
+            <img src="./img/phone.svg" alt="">
+            <div class="card-content">
+                <h3>Card3</h3>
+                <p>testtetstest</p>
+                <a href="" class="btn3">Read more</a>
+                <h4>Подробнее</h4>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function setupButton(btnClass) {
+                const btn = document.querySelector(btnClass);
+                const card = btn.closest('.card'); 
+                const details = btn.nextElementSibling; 
+                
+                details.style.transition = 'all 0.3s ease';
+                details.style.overflow = 'hidden';
+                details.style.maxHeight = '0';
+                details.style.opacity = '0';
+                details.style.margin = '0';
+                details.style.padding = '0';
+                
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    document.querySelectorAll('.card-content h4').forEach(item => {
+                        if (item !== details) {
+                            item.style.maxHeight = '0';
+                            item.style.opacity = '0';
+                            item.style.marginTop = '0';
+                            item.style.padding = '0';
+                            const correspondingBtn = item.previousElementSibling;
+                            if (correspondingBtn && correspondingBtn.classList.contains('btn1') || 
+                                correspondingBtn.classList.contains('btn2') || 
+                                correspondingBtn.classList.contains('btn3')) {
+                                correspondingBtn.textContent = 'Read more';
+                            }
+                        }
+                    });
+                    
+                    if (details.style.maxHeight === '0px') {
+                        details.style.maxHeight = '100px';
+                        details.style.opacity = '1';
+                        details.style.marginTop = '10px';
+                        details.style.padding = '5px 0';
+                        btn.textContent = 'Hide details';
+                    } else {
+                        details.style.maxHeight = '0';
+                        details.style.opacity = '0';
+                        details.style.marginTop = '0';
+                        details.style.padding = '0';
+                        btn.textContent = 'Read more';
+                    }
+                });
+            }
+
+            setupButton('.btn1');
+            setupButton('.btn2');
+            setupButton('.btn3');
+        });
+        </script>
+</body>
+</html>
