@@ -1,0 +1,61 @@
+
+
+html, body{
+    font-family: "Nunito Sans", sans-serif;
+    /* font-size: 4rem; */
+}
+
+.page{
+    display: flex;
+
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.about{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title2{
+    display: flex; 
+    gap: 280px;
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    width: 588px;
+}
+
+.girl{
+    padding-top: 30px;
+}
+

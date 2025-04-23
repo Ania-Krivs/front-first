@@ -1,0 +1,147 @@
+
+:root{
+    --bg-line: #25282B;
+    --brand-yellow: #FDC435;
+    --medium-emphasis: #828282;
+    --low-emphasis: #9A9FA8;
+    --bg-grey: #F9FAFF;
+    --bg-wight: #fff;
+    --font-black: #333;
+    --content-width-max: 1200px;
+}
+
+html{
+    font-size: 4px;
+}
+
+body{
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 4rem;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.page{
+    display: flex;
+}
+
+.page-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 100%;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    /* gap: 30px; */
+}
+
+a{
+    text-decoration: none;
+    color: #25282B;
+}
+
+.first-page-content{
+    flex-direction: column;
+    padding-left: 70px;
+    width: 486px;
+    height: 286px;
+    border: 2px solid #F9FAFF;
+    background-color: #F9FAFF;
+}
+
+.section-lable{
+    padding-top: 30px;
+    font-size: 20px;
+    color: #FDC435;
+}
+
+.title{
+    margin: 0px;
+    font-size: 50px;
+}
+
+.describtion{
+    width: 486px;
+}
+
+.actions{
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    gap: 12px;
+
+}
+
+.projectsbtn{
+    cursor: pointer;
+    background: #FDC435;
+    border-radius: 5px;
+    padding: 5px 15px;
+    outline: none;
+    border: 0px;
+}
+
+.likedln{
+    cursor: pointer;
+    background: #fff;
+    border-radius: 5px;
+    padding: 5px 15px;
+    border: 2px solid black
+
+}
+
+.girl{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.projects{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 250px;
+    /* padding-right: 226px; */
+}
+
+.card-content-yoga{
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content-yoga{
+    padding-right: 226px;
+    flex-direction: column;
+}
+
+.card1{
+    display: flex;
+    align-items: center;
+}
+
+img.yoga{
+    width: 396px;
+    height: 426px;
+}
