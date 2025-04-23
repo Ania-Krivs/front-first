@@ -15,11 +15,32 @@ h1{
   padding-top: 40px;
 }
 
-.card-container{
+.card-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 100px;
+    margin: 100px auto 0; 
+    padding: 20px; 
+    max-width: calc(100% - 40px); 
+    background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    border-radius: 12px; 
+    overflow: hidden; 
+}
+
+.card-container::before {
+    content: '';
+    position: absolute;
+    top: 20px; 
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background: inherit;
+    background-size: cover;
+    filter: blur(8px);
+    z-index: -1;
+    border-radius: 8px; 
 }
 
 .card{
@@ -81,18 +102,56 @@ h1{
     color: #fff;
 }
 
+.card-content .btn4{
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 16px;
+    color: #fff;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card:nth-child(4) {
+    grid-column: 2 / 3; 
+}
+
 .card-content h4{
     padding-top: 10px;
 }
 
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 325px); 
+    gap: 25px;
+}
+
+.card:nth-child(4) {
+    grid-column: 2 / 3; 
+    margin-top: 25px; 
+}
+
 @media (max-width: 1024px) {
     .card-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 325px);
+    }
+    
+    .card:nth-child(4) {
+        grid-column: auto; 
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .card-container {
         grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+    
+    body::before {
+        filter: blur(5px);
     }
 }
